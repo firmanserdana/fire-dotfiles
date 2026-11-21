@@ -1,0 +1,11 @@
+#!/bin/bash
+set -euo pipefail
+THEME=/usr/share/grub/themes/bing
+TMP=$(mktemp "$THEME/.bg.XXXXXX.png")
+trap 'rm -f "$TMP"' EXIT
+ffmpeg -v error -y -i /var/lib/sddm-bing/bg.jpg \
+  -vf "scale=1920:1080:force_original_aspect_ratio=increase,crop=1920:1080,eq=brightness=-0.15" \
+  -frames:v 1 -f image2 -c:v png "$TMP"
+chmod 644 "$TMP"
+mv -f "$TMP" "$THEME/background.png"
+trap - EXIT

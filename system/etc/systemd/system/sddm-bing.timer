@@ -1,0 +1,11 @@
+[Unit]
+Description=Daily Bing image for SDDM
+
+[Timer]
+OnBootSec=1min
+OnCalendar=daily
+Persistent=true
+RandomizedDelaySec=10min
+
+[Install]
+WantedBy=timers.target

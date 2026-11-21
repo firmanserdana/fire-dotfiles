@@ -1,0 +1,8 @@
+[Unit]
+Description=Fetch Bing daily image for SDDM login background
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/sddm-bing-update

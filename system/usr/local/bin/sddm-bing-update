@@ -1,0 +1,13 @@
+#!/bin/bash
+set -euo pipefail
+STATE=/var/lib/sddm-bing
+URL=$(curl -fsS --max-time 20 "https://www.bing.com/HPImageArchive.aspx?format=js&idx=0&n=1&mkt=en-US" | grep -oP '"url":"\K[^"]+')
+[ -n "$URL" ] || { echo "no Bing URL" >&2; exit 1; }
+TMP=$(mktemp "$STATE/.dl.XXXXXX")
+trap 'rm -f "$TMP"' EXIT
+curl -fsS --max-time 60 -o "$TMP" "https://www.bing.com${URL}"
+# must be a real JPEG before replacing the current one
+[ "$(head -c3 "$TMP" | xxd -p)" = "ffd8ff" ] || { echo "not a jpeg" >&2; exit 1; }
+chmod 644 "$TMP"
+mv -f "$TMP" "$STATE/bg.jpg"
+trap - EXIT

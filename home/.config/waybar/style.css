@@ -1,0 +1,243 @@
+@import "./colors.css";
+
+* {
+  /* installed Nerd Font: every icon comes from one font, so sizes match */
+  font-family: "FiraCode Nerd Font Propo";
+  font-size: 13px;
+  border-radius: 8px;
+  box-shadow: none;
+}
+
+window#waybar {
+  background: alpha(@background, 0);
+  color: @foreground;
+  border-radius: 10px;
+}
+
+/* ---- every button: same slim width, content centred ---- */
+#custom-cachy,
+#cpu,
+#clock,
+#mpris,
+#custom-menu,
+#group-extras,
+#tray,
+#network,
+#bluetooth,
+#pulseaudio,
+#pulseaudio.microphone,
+#group-audio,
+#group-brightness,
+#backlight,
+#battery,
+#idle_inhibitor,
+#custom-updates,
+#memory,
+#temperature,
+#workspaces,
+#custom-powermenu {
+  background: alpha(@background, 0.85);
+  color: @foreground;
+  border-radius: 10px;
+  border: 1px solid alpha(@color8, 0.35);
+  padding: 3px 0;
+  margin: 0;
+  min-width: 22px;
+  min-height: 20px;
+}
+
+/* icons without a markup size use this one (same as the 11pt spans) */
+#custom-updates,
+#cpu,
+#memory,
+#temperature,
+#mpris,
+#custom-menu,
+#custom-powermenu,
+#workspaces button {
+  font-size: 15px;
+}
+
+/* hover */
+#custom-cachy:hover,
+#cpu:hover,
+#clock:hover,
+#mpris:hover,
+#custom-menu:hover,
+#group-extras:hover,
+#network:hover,
+#bluetooth:hover,
+#pulseaudio:hover,
+#pulseaudio.microphone:hover,
+#group-audio:hover,
+#group-brightness:hover,
+#battery:hover,
+#idle_inhibitor:hover,
+#custom-updates:hover,
+#memory:hover,
+#temperature:hover,
+#custom-powermenu:hover {
+  background: alpha(@color0, 0.95);
+}
+
+/* ---- workspaces: dots centred in the pill ---- */
+#workspaces {
+  padding: 4px 0;
+}
+
+#workspaces button {
+  color: @color8;
+  padding: 2px 3px 2px 7px;
+  margin: 0;
+  min-width: 0;
+  min-height: 0;
+  border: none;
+  background: transparent;
+}
+
+#workspaces button:hover {
+  color: @color4;
+  background: transparent;
+}
+
+#workspaces button.active,
+#workspaces button.focused {
+  color: @color2;
+}
+
+#workspaces button.urgent {
+  color: @color1;
+}
+
+/* ---- colours per module ---- */
+#privacy {
+  margin: 4px 0;
+  color: @color3;
+}
+
+#clock {
+  color: @color4;
+  font-weight: bold;
+}
+
+#custom-updates {
+  color: @color4;
+}
+
+#cpu {
+  color: @color6;
+}
+
+#memory {
+  color: @color5;
+}
+
+#temperature {
+  color: @color2;
+}
+
+#cpu.warning,
+#memory.warning,
+#temperature.warning,
+#battery.warning {
+  color: @color3;
+}
+
+#cpu.critical,
+#memory.critical,
+#temperature.critical,
+#battery.critical {
+  color: @color1;
+}
+
+#mpris {
+  color: @color3;
+}
+
+#idle_inhibitor {
+  color: @color8;
+}
+
+#idle_inhibitor.activated {
+  color: @color3;
+}
+
+#network.disabled {
+  color: @color1;
+}
+
+#network.wifi {
+  color: @color2;
+}
+
+#network.ethernet {
+  color: @color3;
+}
+
+#bluetooth.disabled {
+  color: @color1;
+}
+
+#bluetooth.connected {
+  color: @color4;
+}
+
+#pulseaudio.sink-muted:not(.microphone) {
+  color: @color3;
+}
+
+#pulseaudio.microphone.source-muted {
+  color: @color1;
+}
+
+#battery.plugged {
+  color: @color4;
+}
+
+#battery.charging {
+  color: @color2;
+}
+
+#custom-powermenu {
+  color: @color1;
+}
+
+/* ---- tooltips ---- */
+tooltip {
+  background: @background;
+  border: 1px solid alpha(@color8, 0.6);
+  border-radius: 8px;
+}
+
+tooltip * {
+  color: @foreground;
+  margin: 2px;
+  background: @background;
+}
+
+/* ---- drawer sliders ---- */
+#pulseaudio-slider,
+#backlight-slider {
+  min-height: 80px;
+  min-width: 0;
+  padding: 0;
+  margin: 0;
+}
+
+#pulseaudio-slider slider,
+#backlight-slider slider {
+  background: transparent;
+}
+
+#pulseaudio-slider trough,
+#backlight-slider trough {
+  min-width: 8px;
+}
+
+#pulseaudio-slider highlight {
+  background: @color4;
+}
+
+#backlight-slider highlight {
+  background: @color3;
+}

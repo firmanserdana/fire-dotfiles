@@ -1,0 +1,13 @@
+# never commit these, even if a sync list changes
+*.bak*
+*.log
+*.key
+*.pem
+*token*
+*secret*
+hosts.yml
+.env
+.gitconfig.local
+
+# local blocklist of private strings used by sync.sh
+.private-patterns

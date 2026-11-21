@@ -1,0 +1,37 @@
+[Added Associations]
+application/pdf=firefox.desktop;org.inkscape.Inkscape.desktop;org.gnome.Evince.desktop;com.microsoft.Edge.desktop;libreoffice-writer.desktop;
+application/x-executable=gcr-prompter.desktop;unityhub.desktop;code.desktop;
+application/x-zerosize=code.desktop;
+x-scheme-handler/http=xfce4-web-browser.desktop;
+x-scheme-handler/https=xfce4-web-browser.desktop;
+image/jpeg=gimp.desktop;swappy.desktop;org.gnome.eog.desktop;
+application/vnd.openxmlformats-officedocument.wordprocessingml.document=libreoffice-writer.desktop;onlyoffice-desktopeditors.desktop;
+image/png=org.inkscape.Inkscape.desktop;gimp.desktop;swappy.desktop;org.gnome.eog.desktop;
+video/mp4=vlc.desktop;
+inode/directory=ranger.desktop;
+image/svg+xml=org.inkscape.Inkscape.desktop;firefox.desktop;
+application/toml=geany.desktop;
+application/yaml=geany.desktop;
+text/x-bibtex=geany.desktop;
+application/vnd.openxmlformats-officedocument.spreadsheetml.sheet=onlyoffice-desktopeditors.desktop;
+x-scheme-handler/antigravity=antigravity.desktop;
+text/plain=geany.desktop;
+application/vnd.openxmlformats-officedocument.presentationml.presentation=onlyoffice-desktopeditors.desktop;
+video/quicktime=vlc.desktop;
+
+[Default Applications]
+application/x-executable=code.desktop
+application/x-zerosize=code.desktop
+x-scheme-handler/http=firefox.desktop
+x-scheme-handler/https=firefox.desktop
+x-scheme-handler/mailto=microsoft-edge.desktop
+image/jpeg=org.gnome.eog.desktop
+application/vnd.openxmlformats-officedocument.wordprocessingml.document=onlyoffice-desktopeditors.desktop
+image/png=org.inkscape.Inkscape.desktop
+text/html=firefox.desktop
+x-scheme-handler/about=firefox.desktop
+x-scheme-handler/unknown=firefox.desktop
+text/x-bibtex=geany.desktop
+x-scheme-handler/antigravity=antigravity.desktop
+x-scheme-handler/claude=com.anthropic.Claude.desktop
+x-scheme-handler/claude-cli=claude-code-url-handler.desktop
